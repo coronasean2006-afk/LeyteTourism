@@ -15,6 +15,7 @@ header {
 
     display: flex;
     align-items: center;
+    justify-content: space-between; 
 
     font-size: 1.2em;
     font-weight: bold;
@@ -22,7 +23,7 @@ header {
 }
 
 .logo img {
-    width: 7.5%;
+    width: 40px;
 }
 
 .logo a {
@@ -96,36 +97,38 @@ header {
 }
 
 .hero{
-    width: 30em;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
     display: grid;
     place-items: center;
-    margin: 0 auto;
     margin-bottom: 100px;
     margin-top: 50px;
+}
+
+.hero > * {
+    grid-area: 1 / 1;
 }
 
 img {
     display: block;
     border-radius: 15px;
-    width: 255%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    grid-column: 1/2;
-    grid-row: 1/2;
 }
 
 .hero-text{
+    width: 100%;
+    align-self: end;
+    z-index: 2;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(5px);
+
+    padding: 1.5em;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    z-index: 2;
-    background: #FFFFFF75;
-    backdrop-filter: blur(5px);
-    width: 255%;
-    padding: 1.5em;
-    align-self: end;
-    text-align: justify;
 }
 
 .hero-text h1 {
@@ -176,14 +179,9 @@ img {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: 200px 200px auto;
     gap: 1rem;
-
-    grid-template-areas: 
-        "item1 item2"
-        "item1 item3"
-        "item4 item4";
 
     max-width: 800px;
     width: 100%;
@@ -206,6 +204,34 @@ img {
 .item-4 { 
     grid-area: item4;
  }
+
+.layout-a {
+    grid-template-areas: 
+    "item1 item2"
+    "item1 item3"
+    "item4 item4";
+}
+
+.layout-b {
+    grid-template-areas: 
+    "item2 item1"
+    "item3 item1"
+    "item4 item4";
+}
+
+.layout-c {
+    grid-template-areas: 
+    "item4 item4"
+    "item1 item2"
+    "item1 item3";
+}
+
+.layout-d {
+    grid-template-areas: 
+    "item4 item4"
+    "item2 item1"
+    "item3 item1";
+}
 
 .item {
     background: #f0f0f075;
@@ -275,15 +301,16 @@ img {
 }
 
 body {
-  margin: 0;
+    margin: 0;
 
-  background-image: 
-  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-  url("../img/Calubian_Leyte_Philippines_Sunset.jpg"); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url("../img/Calubian_Leyte_Philippines_Sunset.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: clamp(14px, 1.2vw, 18px);
 }
 
 footer h3 {
@@ -301,4 +328,46 @@ body p {
 
 h1, h2, h3{
     font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-bar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero {
+        width: 95%;
+    }
+
+    .hero-text {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .info {
+        max-width: 95%;
+        font-size: 1rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4";
+    }
+
+    .page-nav {
+        grid-template-columns: 1fr;
+    }
+
 }
