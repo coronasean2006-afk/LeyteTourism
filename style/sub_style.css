@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000080;
+    color: white;
+}
+
+.header-container {
+    max-width: 80.5%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.logo img {
+    width: 7.5%;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+
+    color: white;
+    text-decoration: none;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    font-size: 1.25rem;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown h1{
+    font-size: 1.25rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+
+    background: #FFFFFF75;
+    backdrop-filter: blur(5px);
+    border: 1px solid black;
+    padding: 1.5em;
+    min-width: 200px;
+
+    top: 100%;
+    left: 0;
+
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: .5em .75em;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f075;
+    backdrop-filter: blur(5px);
+}
+
+.link {
+    color: #1e90ff;
+}
+
+.link:hover {
+    color: #2ec4c7;
+}
+
+.hero{
+    width: 30em;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+img {
+    display: block;
+    border-radius: 15px;
+    width: 255%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.hero-text{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 2;
+    background: #FFFFFF75;
+    backdrop-filter: blur(5px);
+    width: 255%;
+    padding: 1.5em;
+    align-self: end;
+    text-align: justify;
+}
+
+.hero-text h1 {
+    padding: 1em;
+    font-weight: bold;
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.info {
+    background: #00008025;
+    backdrop-filter: blur(5px); 
+    padding: 1.5em;  
+    border-radius: 2em;
+    text-align: justify;
+    max-width: 80.5%;
+    color: white;
+    font-size: 1.2em;
+}
+
+.info h2 {
+    padding: 1em;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.fact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fact-section h2 {
+    background: #00008025;
+    backdrop-filter: blur(5px); 
+    padding: 1em;  
+    border-radius: 2em;
+    text-align: justify;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 50px ;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px auto;
+    gap: 1rem;
+
+    grid-template-areas: 
+        "item1 item2"
+        "item1 item3"
+        "item4 item4";
+
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.item-1 {
+    grid-area: item1; 
+}
+
+.item-2 {
+    grid-area: item2; 
+}
+
+.item-3 { 
+    grid-area: item3; 
+}
+
+.item-4 { 
+    grid-area: item4;
+ }
+
+.item {
+    background: #f0f0f075;
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.item-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.page-nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+}
+
+.nav-card {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.nav-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.nav-card:hover img{
+    transform: scale(1.05);
+}
+
+.nav-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+.nav-text{
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 2px 6px black;
+}
+
+.next .nav-text{
+    left: auto;
+    right: 15px;
+    text-align: right;
+}
+
+body {
+  margin: 0;
+
+  background-image: 
+  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url("../img/Calubian_Leyte_Philippines_Sunset.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer h3 {
+    background-color: #000080;
+    border-top: none;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+body p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Poppins', sans-serif;
+}
